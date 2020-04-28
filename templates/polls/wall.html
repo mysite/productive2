@@ -1,0 +1,27 @@
+{% extends "polls/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<!--
+<div class="button-group filter-button-group">
+	<button class="button is-checked" data-filter=".portfolio">selection</button>   
+	<button class="button" data-filter=".landscape">landscape</button>
+	<button class="button" data-filter=".city">city</button>
+	<button class="button" data-filter=".people">people</button> 	 
+	<button class="button" data-filter=".sydney">sydney</button> 
+	<button class="button" data-filter="*">wall</button> 
+</div>
+-->
+ <div class="grid">
+   
+    	{% if picture %}
+    	
+			{% for picture in picture %}  
+				<img class="wall-item {{picture.category}}" src="/pictures/{{picture.thumbnail}}">
+			{% endfor %}
+			{% else %}
+				<p>No picture available</p>
+			
+		{% endif %}
+
+{% endblock %}

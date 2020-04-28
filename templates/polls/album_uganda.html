@@ -1,0 +1,54 @@
+{% extends "polls/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+  <!-- Subnav
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class"row">
+  	<div id="subnav">
+    </div>
+  </div>
+    
+  <!-- Flexslider
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    
+  <div class="row" id="home">
+  	<div class="flexslider">
+    	<ul class="slides">
+    	{% if picture %}
+			{% for picture in picture %}  
+				<li><img src="/pictures/{{picture.image}}" /></li>
+			{% endfor %}
+      {% else %}
+			  <p>No picture available</p>
+		  {% endif %}		
+      </ul>
+    </div>
+	</div>
+
+<div class="container">
+    <!-- columns should be the immediate child of a .row -->
+  <div class="row">
+    <div class="six columns">
+      <p>After almost 3 years in my professional career I started thinking about how I can help and support projects / organisations that actually do make a difference in our today's world. But at the same time I wanted to make sure that my money does not end up where it is needed and is not eaten up by the overhead costs of big organisations or even supports corrupt regimes. With these thoughts in mind I found myself booking a flight to Uganda together with my girlfriend in order to personally support a ‘school building project in Uganda’ but at the same time to get a picture of where the money will end up and how it can make a difference for one community. 
+      </p>
+
+      <p>Many stories around westerners building schools in Afrika exist and as you can imagine, not all of them are good. Of course, where money is spent in order to drive improvements / impact, it is really difficult to differentiate between positive and negative impact. The perspective from where a situation is monitored of course influences one's judgements but I don’t have to tell you that. I wanted to get my own personal picture of such a project and joining a school building project from a organisation that does not have any overhead costs like 264.education was the perfect situation. I ended up getting a lot of impressions and even by knowing that I spent time at one the poorest areas in the world I never felt that way. Children are happy and have tons of energy. Of course by looking more closely you can see the poorness and you can quickly identify many areas where our support would quickly drive live changing improvements such as having access to clean water, knowledge about hygiene, a toilet and of course access to medical support.</p>
+    </div>
+    <div id="lightgallery" style=" text-align:center">
+      {% if thumbnails %}
+      {% for thumbnails in thumbnails %}  
+        <a href="/pictures/{{thumbnails.image}}"><img class="element-item" src="/pictures/{{thumbnails.thumbnail}}" /></a>
+      {% endfor %}
+    {% else %}
+      <p>No picture available</p>
+    {% endif %}           
+    </div> 
+  </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "polls/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<!-- Subnav
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class"row">
+      	<div id="subnav">
+        	<ul>
+        		<li><a href="/photo/landscape">landscape</a></li>
+ 				<li><a href="/photo/people">people</a></li>
+ 				<li><a>city</a></li>
+ 				<li><a>random</a></li>
+        	</ul>
+		</div>
+     </div>
+     
+     <!-- Galerie
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="row" id="photos">
+   
+   		<div id="lightgallery">
+   			{% if picture %}
+				{% for picture in picture %}  
+					<a href="/pictures/{{picture.image}}"><img class="element-item" src="/pictures/{{picture.thumbnail}}" /></a>
+				{% endfor %}
+			{% else %}
+				<p>No picture available</p>
+			{% endif %}	        	
+		</div> 
+   </div>
+    
+{% endblock %}

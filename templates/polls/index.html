@@ -1,0 +1,86 @@
+{% extends "polls/base.html" %}
+
+{% load static %}
+
+{% load thumbnail %}
+
+{% block content %}
+
+  <!-- Subnav
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class"row">
+  	<div id="mainnav">
+    </div>
+  </div>
+    
+  <!-- Flexslider
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    
+  <div class="row" id="home">
+  	<div class="flexslider">
+    	<ul class="slides">
+    	{% if slide %}
+			{% for slide in slide %}  
+				<li><img src="pictures/{{slide.image}}" /></li>
+			{% endfor %}
+      {% else %}
+			  <p>No picture available</p>
+		  {% endif %}		
+      </ul>
+    </div>
+	</div>
+
+  <!-- Pictures
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div class="row" style=" text-align:center">
+  <br><h4>--------------------------- Pictures ---------------------------</h4>
+  </div>
+  <div class="row" id="photos" style = "text-align:center">
+     
+    <div id="lightgallery">
+        
+      {% if picture %}
+      {% for picture in picture %} 
+
+          {% thumbnail picture.image "310x310" as im %}
+            <a href="/pictures/{{picture.image}}"><img src="{{im.url}}"></a>          
+{% endthumbnail %} 
+        
+      {% endfor %} 
+      {% else %}
+        <p>No picture available</p>
+      {% endif %}   
+
+    </div> 
+  </div>
+
+  <!-- Albums
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div class="row" style="text-align:center">
+  <br><h4>--------------------------- Projects ---------------------------</h4>
+  </div>
+
+  <div class="row" style="text-align:center">
+    
+    {% if project %}
+    
+    {% for project in project %}  
+      <!--<a href="/album/uganda"><img class="wall-item {{project.category}}" src="/pictures/{{project.image}}"></a>-->
+      {% thumbnail project.image "310x310" as im %}
+          <a href="#"><img class="{{project.category}}" src="{{im.url}}"></a>
+      {% endthumbnail %}
+
+    {% endfor %}
+    {% else %}
+      <p>No project available</p> 
+    {% endif %}
+      
+  </div>
+
+  <div class="row" style="text-align:center">
+  <br><h4>-----------------------------------------------------------------</h4>
+  </div>
+  
+{% endblock %}

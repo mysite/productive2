@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--Load files
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+{% load static %}
+
+<!--Load Plugins
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script src="{% static 'polls/js/jquery.min.js' %}"></script>
+
+<!-- Google
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78954921-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<!-- Basic Page Needs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>fabiangatzka</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FONT
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/normalize.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/skeleton.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/flexslider.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/lightgallery.css' %}" />
+
+<!-- Favicon
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="icon" type="image/png" href="/pictures/favicon.png">
+
+</head>
+
+<body>
+<!-- Beginn
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+
+  <!-- Logo & Mainnav
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+	<div class="row">
+  	<div class="one-half column" style="margin-top: 4%">
+    	<h4></h4>
+    </div>
+    
+    <div class="one-half column" style="margin-top: 4%">
+  		<div id="mainnav">
+      	<ul>
+  				<li><a href="/">home</a></li>
+  				<!--<li><a href="/photo/landscape">photos</a></li>
+          <li><a href="/wall">wall</a></li>
+  				<li><a href="/dashboard">login</a></li>-->
+    		</ul>
+      </div>
+    </div>
+  </div>
+
+<!-- Main
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	{% block content %}
+	{% endblock %}
+
+<!-- Copyright
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
+  <div class="row" style="margin-bottom: 5%">
+    <div id="subnav" style="text-align:center">
+      <ul>
+        <li>© Fabian Gatzka
+        <li><a href="/contact">contact</a></li>
+        <li><a href="/impressum">impressum</a></li>
+      </ul>
+    </div>
+  </div>
+	
+	
+</div>
+
+
+<!-- JS-->
+<script src="{% static 'polls/js/isotope.pkgd.js' %}"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+<script defer src="{% static 'polls/js/jquery.flexslider.js' %}"></script>
+<script src="{% static 'polls/js/lightgallery.min.js' %}"></script>
+<script src="{% static 'polls/js/script.js' %}"></script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>  
+</html>
